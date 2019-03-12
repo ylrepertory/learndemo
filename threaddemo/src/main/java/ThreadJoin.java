@@ -35,7 +35,7 @@ public class ThreadJoin {
                 System.out.println("running2 over");
             }
         }) ;
-
+        long base = System.currentTimeMillis();
         t1.start();
         t2.start();
 
@@ -44,7 +44,7 @@ public class ThreadJoin {
 
         //等待线程2终止
         t2.join();
-        System.out.println("main over");
+        System.out.println("main over"+(System.currentTimeMillis() - base));
     }
 
     public static void main(String[] args) throws InterruptedException {
