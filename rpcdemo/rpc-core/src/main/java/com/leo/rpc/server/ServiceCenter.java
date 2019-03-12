@@ -60,7 +60,7 @@ public class ServiceCenter  {
         return port;
     }
 
-    private static class ServiceTask implements Runnable {
+    private  class ServiceTask implements Runnable {
         Socket clent = null;
 
         public ServiceTask(Socket client) {
