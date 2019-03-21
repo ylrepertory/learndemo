@@ -37,10 +37,10 @@ public class ThreadJoin {
         }) ;
         long base = System.currentTimeMillis();
         t1.start();
-        t2.start();
-
         //等待线程1终止
-        t1.join();
+        t1.join(10);
+
+        t2.start();
 
         //等待线程2终止
         t2.join();
