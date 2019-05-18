@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
  * @program: learndemo
  * @description: 线程join 指定的线程加入到当前线程
  *              比如在线程B中调用了线程A的Join()方法，直到线程A执行完毕后，才会继续执行线程B。
+ *              millis告诉等待的线程要等多久  如果执行A执行完毕直接执行B  如果A没有执行完毕到时间就可以执行
  * @author: leo
  * @create: 2019-01-10 17:13
  **/
@@ -23,27 +24,27 @@ public class ThreadJoin {
                 System.out.println("running1 over");
             }
         }) ;
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("running2");
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("running2 over");
-            }
-        }) ;
+//        Thread t2 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("running2");
+//                try {
+//                    Thread.sleep(1000);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                System.out.println("running2 over");
+//            }
+//        }) ;
         long base = System.currentTimeMillis();
         t1.start();
         //等待线程1终止
-        t1.join(10);
+        t1.join(5000);
 
-        t2.start();
-
-        //等待线程2终止
-        t2.join();
+//        t2.start();
+//
+//        //等待线程2终止
+//        t2.join();
         System.out.println("main over"+(System.currentTimeMillis() - base));
     }
 
