@@ -15,6 +15,7 @@
         <module>IONIOdemo</module>
         <module>basicdemo</module>
         <module>rpcdemo</module>
+        <module>utilsdemo</module>
     </modules>
 
     <dependencies>
