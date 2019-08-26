@@ -1,8 +1,9 @@
 package com.learn.basic;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
+import com.carrotsearch.sizeof.RamUsageEstimator;
+
+import java.lang.instrument.Instrumentation;
+import java.util.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -13,6 +14,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * @create: 2019-04-19 10:54
  **/
 public class basic {
+
+
     public static void main(String[] args) {
 //        Integer i=2;
 //        Byte b=2;
@@ -28,11 +31,23 @@ public class basic {
 //            sum=v+sum;
 //        }
 //        System.out.println(sum);
-       long now= System.nanoTime();
-        while (true){
-            System.out.println(System.nanoTime()-now);
-        }
+//        new Date(1561017268000L);
+//       long now= System.nanoTime();
+//        while (true){
+//            System.out.println(System.nanoTime()-now);
+//        }
 
 //        Integer interval =(int) Math.ceil((double) 177134 / 10);
+
+//        Map<String,Integer> map=new HashMap<>(10000*1000);
+//        for(int i=0;i<10000*1000;i++){
+//            map.put(i+"",i);
+//        }
+        System.out.println(RamUsageEstimator.sizeOf("40"));
+        System.out.println(RamUsageEstimator.sizeOf(21474848));
+        ThreadLocal threadLocal=new ThreadLocal();
+
     }
+
+
 }
